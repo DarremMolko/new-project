@@ -1,5 +1,7 @@
 FROM xhofe/alist:latest
 
+WORKDIR /opt/alist
+
 RUN adduser \
     --disabled-password \
     --gecos "" \
