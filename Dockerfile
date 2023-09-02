@@ -8,9 +8,16 @@ RUN apt-get update && \
     tar -xzvf alist-linux-amd64.tar.gz && \
     rm -f alist-linux-amd64.tar.gz && \
     chmod +x alist && \
-    useradd -r -u 10014 appuser && \
-    chown -R appuser: /app
+    adduser \
+        --disabled-password \
+        --gecos "" \
+        --home "/nonexistent" \
+        --shell "/sbin/nologin" \
+        --no-create-home \
+        --uid 10014 \
+        "choreo" && \
+    chown -R choreo:choreo /app
 
-USER appuser
+USER choreo
 
 CMD /app/alist server --no-prefix
