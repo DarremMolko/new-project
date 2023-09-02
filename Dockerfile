@@ -14,7 +14,7 @@ RUN apt-get update && \
         --home "/nonexistent" \
         --shell "/sbin/nologin" \
         --no-create-home \
-        --uid 10014 \
+        --uid 10001 \
         "choreo" && \
     chown -R choreo:choreo /app
 
