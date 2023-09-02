@@ -16,8 +16,8 @@ RUN apt-get update && \
         --no-create-home \
         --uid 10001 \
         "choreo" && \
-    chown -R choreo:choreo /app
+    chown -R 10001:10001 /app
 
-USER choreo
+USER 10001
 
 CMD /app/alist server --no-prefix
